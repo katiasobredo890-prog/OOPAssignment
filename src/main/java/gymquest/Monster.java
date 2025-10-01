@@ -1,8 +1,5 @@
 package gymquest;
 
-public class Monster extends Character {
+public abstract class Monster extends Character {
 
-
-
-    }
-
+}
