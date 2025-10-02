@@ -1,17 +1,25 @@
 package gymquest;
 
 public abstract class Character {
-
-    private String name; // Variabler som lagrar data för varje Character
+    private String name; // Variabler som lagrar data för varje Character underklass
     private int hp;
     private int damage;
+
+    public Character(String name, int hp, int damage) { // Konstruktor med inkapsling (egenskaper är privata)
+        this.name = name;
+        this.hp = hp;
+        this.damage = damage;
+    }
+
+    public Character() {
+
+    }
 
     public String getName() { // Getters och setters
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
     }
 
     public int getHp() {
@@ -25,9 +33,10 @@ public abstract class Character {
     public int getDamage() {
         return damage;
     }
+
     public void setDamage(int damage) {
         this.damage = damage;
     }
 
-}
 
+}
