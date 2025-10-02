@@ -9,15 +9,12 @@ public class Hero extends Character {
     private int level;
 
     public Hero(String name) {
-        super(name,100, 10); // Anropar föräldrarklassens (Character) konstruktor
+        super(name, 100, 10); // Anropar föräldrarklassens (Character) konstruktor
 
         this.maxHp = 100; // Startvärden för heroe
         this.xp = 0;
         this.level = 1;
-    }
 
-    public int getmaxHp() { // Getters och setters
-        return maxHp;
     }
 
     public void setMaxHp(int maxHp) {
@@ -31,6 +28,7 @@ public class Hero extends Character {
     public int getLevel() {
         return level;
     }
+
     public void addXp(int amount) { // Metod som ger hjälten XP och level up varje gång xp når 100
         if (level >= 10)
             return; // Om spelet är vunnet ska det inte fortsättas läggas till xp
@@ -40,14 +38,21 @@ public class Hero extends Character {
             this.xp -= 100;
             levelUp();
         }
-        private void levelUp() {
-            level ++;  // Höj level
+
     }
-        public int getmaxHp(getmaxHp() + 20)  // Öka maxhp med 20
+
+    private void levelUp() {
+        level++; // Höj level
+    }
+
+    public int getmaxHp() {  // Öka maxhp med 20
         setHp(getmaxHp());
         System.out.println("Level up! You are now level " + level + ", maxHp is now " + getmaxHp() + ", and HP is restored!");
-    private void levelUp() {
+
+        return 0;
     }
 
-
 }
+
+
+
