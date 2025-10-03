@@ -1,6 +1,4 @@
-package gymquest;
-
-import java.util.Scanner;
+package gymquest.Characters;
 
 public class Hero extends Character {
 

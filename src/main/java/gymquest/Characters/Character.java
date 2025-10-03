@@ -1,4 +1,4 @@
-package gymquest;
+package gymquest.Characters;
 
 public abstract class Character {
     private String name; // Variabler som lagrar data för varje Character underklass
