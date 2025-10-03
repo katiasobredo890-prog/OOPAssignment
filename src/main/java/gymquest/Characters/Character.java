@@ -9,34 +9,28 @@ public abstract class Character {
         this.name = name;
         this.hp = hp;
         this.damage = damage;
-    }
-
-    public Character() {
+        this.isAlive = isAlive;
 
     }
-
     public String getName() { // Getters och setters
         return name;
     }
-
     public void setName(String name) {
     }
-
     public int getHp() {
         return hp;
     }
-
     public void setHp(int hp) {
         this.hp = hp;
     }
-
     public int getDamage() {
         return damage;
     }
-
     public void setDamage(int damage) {
         this.damage = damage;
     }
-
-
+    public boolean isAlive() {
+        return hp > 0;
+    }
+    public abstract int attack(); // Abstrakt metod jämfört med ovanstående
 }

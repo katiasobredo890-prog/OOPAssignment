@@ -35,10 +35,10 @@ public class Hero extends Character {
             levelUp();
         }
     }
-    private void levelUp() { // intern metod (private)
-        level++; // Höj level
-        maxHp += 20; // Öka maxhp
-        setHp(maxHp); // Återställer Hp till full
+    private void levelUp() { // intern metod som höjer level, ökar maxHp och återställer hp
+        level++;
+        maxHp += 20;
+        setHp(maxHp);
         System.out.println("Level up! You are now level " + level + ", maxHp is now " + maxHp + ", and HP is restored!");
         }
     public void heroInfo() {
@@ -49,7 +49,11 @@ public class Hero extends Character {
         System.out.println("Max HP: " + maxHp);
     }
 
+    @Override
+    public int attack() {
+        return getDamage();
     }
+}
 
 
 
