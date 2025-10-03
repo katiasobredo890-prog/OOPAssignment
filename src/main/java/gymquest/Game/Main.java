@@ -1,16 +1,19 @@
 package gymquest.Game;
+import java.awt.*;
 import gymquest.Characters.Hero;
+import gymquest.Game.GameHelper;
+import gymquest.Game.Menu;
 
-import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) {
 
-        GameHelper readInput = new GameHelper();
-        String heroName = readInput.readInput();
+        GameHelper gameHelper = new GameHelper();
+        String heroName = gameHelper.readInput();
+        Hero hero = new Hero(heroName);
+        Menu menu = new Menu(gameHelper, hero);
+        menu.start();
     }
-
-    // System.out.println("Info om hjälten: Din hjälte har level " + hero.getLevel() + " och " + hero.getHp() + " i Hp!");
-    // SKAPA METOD FÖR ATT SKRIVA UT HJÄLTENS INFO
-    // SKAPA WORLD
 }
+
+
