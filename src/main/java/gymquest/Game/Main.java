@@ -1,8 +1,6 @@
 package gymquest.Game;
 import java.awt.*;
 import gymquest.Characters.Hero;
-import gymquest.Game.GameHelper;
-import gymquest.Game.Menu;
 
 
 public class Main {

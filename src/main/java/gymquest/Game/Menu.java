@@ -1,4 +1,5 @@
 package gymquest.Game;
+
 import gymquest.Characters.Hero;
 
 public class Menu {
@@ -18,6 +19,7 @@ public class Menu {
         System.out.println("[2] Hero Info");
         System.out.println("[3] Exit");
     }
+
     public void start() {
         System.out.println("=== Welcome to GymQuest ===");
         while (gameIsRunning) { // While loop som kör alternativen tills användaren väljer exit
@@ -33,8 +35,8 @@ public class Menu {
 
             }
         }
-        }
-        }
+    }
+}
 
 
 

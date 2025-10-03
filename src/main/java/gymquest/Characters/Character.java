@@ -9,7 +9,7 @@ public abstract class Character {
         this.name = name;
         this.hp = hp;
         this.damage = damage;
-        this.isAlive = isAlive;
+       // this.isAlive = isAlive;
 
     }
     public String getName() { // Getters och setters

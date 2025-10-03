@@ -11,6 +11,6 @@ public class Boss extends Character {
             System.out.println("Specialattack!");
             return getDamage() * 2;
         }
-        return getDamage(); 
+        return getDamage();
     }
 }
