@@ -27,7 +27,7 @@ public class Hero extends Character {
     }
 
     public void addXp(int amount) { // Metod som ger hjälten XP och level up varje gång xp når 100
-        if (level >= 10) return; // Om level är > 10 avbryts metoden
+        if (level >= 10) return; // Om level är > 10 avbryts metoden GÖR LOOP SKICKA UT WINNNNNNNNNNNNN
         this.xp += amount; // Lägg till Xp
 
         if (this.xp >= 100) {
@@ -49,7 +49,7 @@ public class Hero extends Character {
         System.out.println("Max HP: " + maxHp);
     }
 
-    @Override
+    @Override // VAD SKA DETTA ANVÄNDAS TILL
     public int attack() {
         return getDamage();
     }
