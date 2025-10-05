@@ -2,7 +2,7 @@ package gymquest.Items;
 
 public class Weapon {
     private String name;
-    private int damage;
+    private int damage; // VADÅ FINAL
 
     public Weapon(String name, int damage) {
         this.name = name;
@@ -14,10 +14,8 @@ public class Weapon {
     public int getDamage() {
         return damage;
     }
-    public void setName(String name) {
-        this.name = Bicep;
-    }
-    public int attack() {
-        System.out.println("You go to the benchpress ");
+    @Override // Behöver inte anropa med lång kod utan med metoden
+    public String toString() { // Gör override på javas automatiska klass object för att ej få ful utskrift eftersom jag skriver ut ett helt objekt (Weapon)
+        return name + " (+" + damage + "dmg)";
     }
 }

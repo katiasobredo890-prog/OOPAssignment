@@ -1,27 +1,35 @@
 package gymquest.Characters;
 
+import gymquest.Items.Weapon;
+
 public class Hero extends Character {
 
-    private int maxHp; // Instansvariabler privata för dom gäller endast heroe
+    private int maxHp; // Instansvariabler privata för dom gäller endast hero
     private int xp;
     private int level;
+    private Weapon weapon; // FÖRKLARA
 
     public Hero(String name) {
-        super(name, 100, 10); // Konstruktor, anropar föräldrarklassen (Character)
-        this.maxHp = 100; // Startvärden för heroe
+        super(name, 100, 10); // Konstruktor, anropar föräldrar-klassen (Character)
+        this.maxHp = 100; // Startvärden för hero
         this.xp = 0;
         this.level = 1;
+        this.weapon = new Weapon("bicps", 10); // FÖRKLARA OCH FÖRSTÅ HUR WEAPON FUNGERAR I PARAMETERN
 
     }
+
     public void setMaxHp(int maxHp) {
         this.maxHp = maxHp;
     }
+
     public int getMaxHp() {  // Öka maxHp med 20
         return maxHp;
     }
+
     public void setXp(int xp) {
         this.xp = xp;
     }
+
     public int getLevel() {
         return level;
     }
@@ -35,12 +43,14 @@ public class Hero extends Character {
             levelUp();
         }
     }
+
     private void levelUp() { // intern metod som höjer level, ökar maxHp och återställer hp
         level++;
         maxHp += 20;
         setHp(maxHp);
         System.out.println("Level up! You are now level " + level + ", maxHp is now " + maxHp + ", and HP is restored!");
-        }
+    }
+// SKRIV UT WEAPON DAMAGE
     public void heroInfo() {
         System.out.println("Hero info:");
         System.out.println("Level: " + level);
@@ -49,9 +59,23 @@ public class Hero extends Character {
         System.out.println("Max HP: " + maxHp);
     }
 
-    @Override // VAD SKA DETTA ANVÄNDAS TILL
-    public int attack() {
-        return getDamage();
+    public void equip(Weapon weapon) { // FÖRKLARA
+        this.weapon = weapon;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+
+    @Override
+    public int attack() { // Ersätter characters metod attack
+        int base = getDamage(); // Hämtar hjältens grundskada från superklassen
+        int w = 0; // Vapen skada
+        if (weapon != null) { // Om hjälten inte har "null", alltså har ett vapen
+            w = weapon.getDamage(); // Hämtar och reassignar värdet till vapnets damage
+        }
+        return base + w; // Total skada returneras
     }
 }
 

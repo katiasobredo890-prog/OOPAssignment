@@ -31,7 +31,13 @@ public class Menu {
                 System.out.println("You go to the gym to get some gains!");
                 Monster monster = encounter.generateEncounter();
                 if (monster != null) {
-                    System.out.println("You " + monster.getName() + "ed!");
+                    boolean heroWon = reader.fight(hero, monster); // FÖRKLARING
+                    if (heroWon) {
+                        System.out.println("You defeated " + monster.getName() + "!");
+                    } else {
+                        System.out.println("You fainted at the gym!");
+                        gameIsRunning = false;
+                    }
                 } else {
                     System.out.println("You had a great workout!");
                 }

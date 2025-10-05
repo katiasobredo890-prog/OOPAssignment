@@ -1,7 +1,7 @@
 package gymquest.Characters;
 
 public abstract class Character {
-    private String name; // Variabler som lagrar data för varje Character underklass
+    private String name; // Variabler som lagrar data för varje Character underklass, inkapsling
     private int hp;
     private int damage;
 
@@ -9,29 +9,43 @@ public abstract class Character {
         this.name = name;
         this.hp = hp;
         this.damage = damage;
-
     }
+
     public String getName() { // Getters och setters
         return name;
     }
+
     public void setName(String name) {
     }
+
     public int getHp() {
         return hp;
     }
+
     public void setHp(int hp) {
         this.hp = hp;
     }
+
     public int getDamage() {
         return damage;
     }
+
     public void setDamage(int damage) { // VAR ANVÄNDAS SETDAMAGE
         this.damage = damage;
     }
 
     public boolean isAlive() { // SKA DENNA LOOP GÖRAS
-        return hp > 0;
+        return hp > 0; // FÖRKLARING
     }
-    public abstract int attack(); // Abstrakt metod jämfört med ovanstående
+
+    public abstract int attack();
+    // Abstrakt metod jämfört med ovanstående, tvingar underklasser att skapa egen attack
+
+    public void takeDamage(int dmg) {
+        if (dmg <= 0) // Ignorera negativ skada BEHÖVS DET OCH VARFÖR??
+            return;
+        hp = Math.max(0, hp - dmg); // Sänk hp men aldrig under noll
+    }
 }
+
 
