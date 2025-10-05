@@ -33,15 +33,9 @@ public class Menu {
                 if (monster != null) {
                     boolean heroWon = reader.fight(hero, monster); // FÖRKLARING
                     if (heroWon) {
-                        System.out.println("You defeated " + monster.getName() + "!");
-                    } else {
-                        System.out.println("You fainted at the gym!");
-                        gameIsRunning = false;
+                        gameIsRunning = true; // Spelet fortsätter köra
                     }
-                } else {
-                    System.out.println("You had a great workout!");
                 }
-
             } else if (choice == 2) { // VARFÖR INLAND ELSE OCH IBLAND ELSE IF I OLIKA ORDNINGAR??
                 hero.heroInfo();
             } else {

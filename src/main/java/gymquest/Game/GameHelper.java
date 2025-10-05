@@ -26,26 +26,27 @@ import java.util.Scanner; // Importerar Scanner
     }
         // FIGHT LOOP
     public boolean fight(Hero hero, Monster monster) { // Sant/falskt loop för om monster finns eller ej
-        if (monster == null) { // 1. Ingen fight
-            System.out.println("You had a GOOD workout!");
-            return true; // Ingen fight
+        if (monster == null) { // Ingen fight
+            System.out.println("Today was leg-day and you had a good workout!");
+            return false; // Ingen fight, ingen vinst
         }
-        while (hero.isAlive() && monster.isAlive()) { // 2. Monster finns, hero attackerar först
+        while (hero.isAlive() && monster.isAlive()) { // Monster finns, hero attackerar först
             int heroDmg = hero.attack(); // Hjälten slår först
             monster.takeDamage(heroDmg);
-            System.out.println("Monster hp: " + monster.getHp() + ")");
-            if (!monster.isAlive()) // Om monster "!" (false)  is alive, monstret dog
-                break;
+            System.out.println("You used " + hero.getWeapon().getName() + " and got a few more reps!"); // hämtar vapnets namn och skriver ut
+            if (!monster.isAlive()) {// Om monster ("!" = false)  is alive, monstret dog
+                hero.addXp(monster.getXpReward()); // Belöning
+            return true; }
             int monDmg = monster.attack(); // Monster slår
+            System.out.println("Set 1: You're overtraining! Take it easy or you'll burn out!");
             hero.takeDamage(monDmg);
-            System.out.println("Hero hp: " + hero.getHp());
         }// 3. Avgör vinnare
         if (hero.isAlive()) {
-            System.out.println("You won!");
-            hero.addXp(monster.getXpReward()); // Fåt xpreward som sedan kan göras om till GOLD REWARD
+            System.out.println("Set 2: You got the bar up, PR!");
+            hero.addXp(monster.getXpReward()); // Fåt xp reward som sedan kan göras om till GOLD REWARD
             return true;
         } else {
-            System.out.println("You were defeated..");
+            System.out.println("You survived your workout and got " + hero.getHp() + " focus, and " + hero.getXp() + " motivation!");
             return false;
         }
     }

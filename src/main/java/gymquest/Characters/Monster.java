@@ -23,5 +23,5 @@ public abstract class Monster extends Character {
         protected void setGoldReward ( int g){
             this.goldReward = g;
         }
-        public abstract void randomXp(); // Abstrakt metod
+        public abstract void randomXp(); // Abstrakt metod för randomXp
     }

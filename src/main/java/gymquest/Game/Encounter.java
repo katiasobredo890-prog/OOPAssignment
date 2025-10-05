@@ -6,7 +6,7 @@ import gymquest.Characters.Boss;
 
 public class Encounter {
     public Monster generateEncounter() {
-        double chance = Math.random(); // Skapar slumpvärde mellan 0.0 och 1.0, avgör vem man möter
+        double chance = Math.random(); // Skapar slumpvärde mellan 0.0 och 1.0, avgör vem man möter FÖRKLARAAAAAAA
 
         if (chance < 0.7) { // 70% chans vanligt monster
             System.out.println("You ego-lifted and pulled a muscle!");
