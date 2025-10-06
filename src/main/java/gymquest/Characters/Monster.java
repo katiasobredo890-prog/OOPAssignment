@@ -3,8 +3,7 @@ package gymquest.Characters;
 
 
 public abstract class Monster extends Character {
-    private int xpReward;
-    private int goldReward;
+    private int xpReward; // Privat variabel för hur mycket xp hjälten får när monstret dör
 
     public Monster(String name, int hp, int damage, int xpReward) {
         super(name, hp, damage);
@@ -17,11 +16,6 @@ public abstract class Monster extends Character {
         public int getXpReward () {
             return xpReward;
         }
-        public int getGoldReward () {
-            return goldReward;
-        }
-        protected void setGoldReward ( int g){
-            this.goldReward = g;
-        }
+
         public abstract void randomXp(); // Abstrakt metod för randomXp
     }

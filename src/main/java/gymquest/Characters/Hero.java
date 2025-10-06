@@ -6,37 +6,28 @@ import javax.swing.*;
 
 public class Hero extends Character {
 
-    private int maxHp; // Instansvariabler privata för dom gäller endast hero
+    private int maxHp; // Instansvariabler privata
     private int xp;
     private int level;
-    private Weapon weapon; // FÖRKLARA
+    private Weapon weapon;
 
-    public Hero(String name) {
-        super(name, 100, 30); // Konstruktor, anropar föräldrar-klassen (Character)
-        this.maxHp = 100; // Startvärden för hero
+    public Hero(String name) { // Startvärden för hero
+        super(name, 100, 30); // Konstruktor, anropar föräldrar-klassen (Character), sätter värden
+        this.maxHp = 100;
         this.xp = 0;
         this.level = 1;
-        this.weapon = new Weapon("belt", 20); // FÖRKLARA OCH FÖRSTÅ HUR WEAPON FUNGERAR I PARAMETERN
+        this.weapon = new Weapon("belt", 20);
 
-    }
-
-    public void setMaxHp(int maxHp) {
-        this.maxHp = maxHp;
-    }
-
-    public int getMaxHp() {  // Öka maxHp med 20
-        return maxHp;
     }
 
     public int getXp() {
         return xp;
-    }
-    public void setXp(int xp) {
-        this.xp = xp;
+
     }
 
     public int getLevel() {
         return level;
+
     }
 
     public void addXp(int amount) { // Metod som ger hjälten XP och level up varje gång xp når 100
@@ -44,14 +35,14 @@ public class Hero extends Character {
         this.xp += amount; // Lägg till Xp
 
         if (this.xp >= 100) {
-            this.xp -= 100; // Tar bort 100 xp vid level up
+            this.xp -= 100; // Tar bort 100 xp vid level up så det börjar om på noll
             levelUp();
         }
     }
 
     private void levelUp() { // intern metod som höjer level, ökar maxHp och återställer hp
         level++;
-        maxHp += 30; // Ökar maxhp FÖRKLARING
+        maxHp += 30; // Ökar maxhp
         setHp(maxHp);
         System.out.println(" \uD83C\uDFC6 Level up! You are now level " + getLevelTitle() + ", maxFocus is now " + maxHp + "!");
     }
@@ -77,15 +68,15 @@ public class Hero extends Character {
     @Override
     public int attack() { // Ersätter characters metod attack
         int base = getDamage(); // Hämtar hjältens grundskada från superklassen
-        int w = 0; // Gör så vapnet bara får +0 i skada om det är "null"
-        if (weapon != null) { // Om hjälten inte har ett vapen
+        int w = 0; // Gör så vapnet bara får +0 i skada om hjälten inte har ett vapen
+        if (weapon != null) {
             w = weapon.getDamage(); // Hämtar och reassign värdet till vapnets damage
         }
         return base + w; // Total skada returneras
     }
 
     public String getLevelTitle() {
-        switch (level) { // Switch sats som skriver ut olika namn på varje level
+        switch (level) { // Switch sats som skriver ut olika namn på varje level som kommer användas i menyn
             case 1:
                 return "1: Neewbie";
             case 2:

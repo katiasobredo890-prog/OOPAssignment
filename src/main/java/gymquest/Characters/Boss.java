@@ -5,7 +5,6 @@ public class Boss extends Monster {
     public Boss(String name, int hp, int damage, int xpReward, int goldReward) {
         super(name, hp, damage, xpReward);
         setXpReward(xpReward);
-        setGoldReward(goldReward);
     }
 
     @Override
@@ -14,11 +13,11 @@ public class Boss extends Monster {
             System.out.println("\uD83D\uDC80 YOU DROPPED THE BAR \uD83D\uDC80");
             return getDamage() * 2;
         }
-        return getDamage();
+        return getDamage(); // Annars normal skada
     }
-
-    @Override
+    @Override // Tom override som finns för att superklassen kräver att metoden ska finnas
     public void randomXp() {
 
     }
 }
+

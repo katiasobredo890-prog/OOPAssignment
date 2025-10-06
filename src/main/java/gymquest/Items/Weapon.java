@@ -2,7 +2,7 @@ package gymquest.Items;
 
 public class Weapon {
     private String name;
-    private int damage; // VADÅ FINAL
+    private int damage;
 
     public Weapon(String name, int damage) {
         this.name = name;

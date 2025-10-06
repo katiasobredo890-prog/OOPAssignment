@@ -18,7 +18,7 @@ import java.util.Scanner; // Importerar Scanner
     public int readInt() {
         System.out.println();
         int value = scanner.nextInt();
-        scanner.nextLine(); // Radbrytningen SKA DEN TAS BORT?
+        scanner.nextLine(); // Radbrytning
         return value;
     }
         public void close() {
@@ -45,7 +45,7 @@ import java.util.Scanner; // Importerar Scanner
         }// 3. Avgör vinnare
         if (hero.isAlive()) {
             System.out.println("You got the bar up and made a PR! \uD83D\uDD25");
-            hero.addXp(monster.getXpReward()); // Fåt xp reward som sedan kan göras om till GOLD REWARD
+            hero.addXp(monster.getXpReward()); // Får xp reward som sedan kan göras om till GOLD REWARD
             System.out.println("You have " + hero.getHp() + " focus, and " + hero.getXp() + " motivation!");
             return true;
         } else {
