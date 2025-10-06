@@ -9,13 +9,14 @@ public class Encounter {
         double chance = Math.random(); // Skapar slumpvärde mellan 0.0 och 1.0, avgör vem man möter FÖRKLARAAAAAAA
 
         if (chance < 0.7) { // 70% chans vanligt monster
-            System.out.println("You ego-lifted and pulled a muscle!");
-            return new EgoLift("burnet out", 50, 10, 20, 10); // Return new skapar nytt objekt av klassen Egolift
+            EgoLift egoLift = new EgoLift("burnout", 60, 20,30,20); // Return new skapar nytt objekt av klassen Egolift
+            egoLift.randomXp(); // Hämtar randomXp
+            return egoLift;
         } else if (chance < 0.9) { // 20% chans
-            return new Boss("overtraining", 50, 10, 20, 10);
+            return new Boss("overtraining", 120, 30, 50, 40);
         } else {
-            System.out.println("You had a good workout!");
-            return null;
+            System.out.println("You had a good workout and went home to eat! \uD83D\uDC4C");
+            return null; // VARFÖR NULL HÄR OCH EJ BARA RETURN
         }
     }
 }

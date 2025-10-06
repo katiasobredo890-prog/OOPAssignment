@@ -28,12 +28,15 @@ public class Menu {
             showMenu();
             int choice = reader.readInt();
             if (choice == 1) {
-                System.out.println("You go to the gym to get some gains!");
+                System.out.println("You go to the gym to get some gains! \uD83D\uDCAA");
                 Monster monster = encounter.generateEncounter();
                 if (monster != null) {
                     boolean heroWon = reader.fight(hero, monster); // FÖRKLARING
                     if (heroWon) {
                         gameIsRunning = true; // Spelet fortsätter köra
+                    }
+                    if (hero.getLevel() >= 10) { // Stoppar spelet vid level 10
+                        gameIsRunning = false;
                     }
                 }
             } else if (choice == 2) { // VARFÖR INLAND ELSE OCH IBLAND ELSE IF I OLIKA ORDNINGAR??

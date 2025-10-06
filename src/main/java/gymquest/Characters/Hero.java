@@ -2,6 +2,8 @@ package gymquest.Characters;
 
 import gymquest.Items.Weapon;
 
+import javax.swing.*;
+
 public class Hero extends Character {
 
     private int maxHp; // Instansvariabler privata för dom gäller endast hero
@@ -51,7 +53,7 @@ public class Hero extends Character {
         level++;
         maxHp += 30; // Ökar maxhp FÖRKLARING
         setHp(maxHp);
-        System.out.println("Level up! You are now level " + getLevel() + ", maxFocus is now " + maxHp + "!");
+        System.out.println(" \uD83C\uDFC6 Level up! You are now level " + getLevelTitle() + ", maxFocus is now " + maxHp + "!");
     }
 
     // SKRIV UT WEAPON DAMAGE
@@ -75,9 +77,9 @@ public class Hero extends Character {
     @Override
     public int attack() { // Ersätter characters metod attack
         int base = getDamage(); // Hämtar hjältens grundskada från superklassen
-        int w = 0; // Vapen skada
-        if (weapon != null) { // Om hjälten inte har "null", alltså har ett vapen
-            w = weapon.getDamage(); // Hämtar och reassignar värdet till vapnets damage
+        int w = 0; // Gör så vapnet bara får +0 i skada om det är "null"
+        if (weapon != null) { // Om hjälten inte har ett vapen
+            w = weapon.getDamage(); // Hämtar och reassign värdet till vapnets damage
         }
         return base + w; // Total skada returneras
     }
@@ -85,25 +87,25 @@ public class Hero extends Character {
     public String getLevelTitle() {
         switch (level) { // Switch sats som skriver ut olika namn på varje level
             case 1:
-                return "Neewbie";
+                return "1: Neewbie";
             case 2:
-                return "Beginner";
+                return "2: Beginner";
             case 3:
-                return "Rookie";
+                return "3: Rookie";
             case 4:
-                return "Gym-bro";
+                return "4: Gym-bro";
             case 5:
-                return "Fitness influencer";
+                return "5: Fitness influencer";
             case 6:
-                return "Body-builder";
+                return "6: Body-builder";
             case 7:
-                return "Power-lifter";
+                return "7: Power-lifter";
             case 8:
-                return "Athlete";
+                return "8: Athlete";
             case 9:
-                return "Super-athlete";
+                return "9: Super-athlete";
             case 10:
-                return "LEGEND";
+                return "10: LEGEND! YOU WON THE GAME";
             default:
                 return "unknown level";
         }

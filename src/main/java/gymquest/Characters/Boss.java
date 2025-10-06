@@ -11,7 +11,7 @@ public class Boss extends Monster {
     @Override
     public int attack() {
         if (Math.random() < 0.3) { // 30 % chans för specialattack
-            System.out.println("You got OVERTRAINED");
+            System.out.println("\uD83D\uDC80 YOU DROPPED THE BAR \uD83D\uDC80");
             return getDamage() * 2;
         }
         return getDamage();
