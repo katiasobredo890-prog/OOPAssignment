@@ -15,7 +15,7 @@ public class Boss extends Monster {
         }
         return getDamage(); // Annars normal skada
     }
-    @Override // Tom override som finns för att superklassen kräver att metoden ska finnas
+    @Override // Tom override som finns för att superklassen kräver att metoden ska finnas1
     public void randomXp() {
 
     }

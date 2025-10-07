@@ -44,7 +44,7 @@ public class Hero extends Character {
         level++;
         maxHp += 30; // Ökar maxhp
         setHp(maxHp);
-        System.out.println(" \uD83C\uDFC6 Level up! You are now level " + getLevelTitle() + ", maxFocus is now " + maxHp + "!");
+        System.out.println(" \uD83C\uDFC6 Level up! You are now level " + getLevelTitle() + "!");
     }
 
     // SKRIV UT WEAPON DAMAGE

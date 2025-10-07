@@ -16,7 +16,7 @@ public class Encounter {
             return new Boss("overtraining", 100, 30, 50, 40);
         } else {
             System.out.println("You had a good workout and went home to eat! \uD83D\uDC4C");
-            return null;
+            return null; // 10% ingenting händer
         }
     }
 }
