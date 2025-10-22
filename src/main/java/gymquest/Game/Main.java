@@ -4,7 +4,7 @@ import gymquest.Characters.Hero;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         GameHelper gameHelper = new GameHelper(); // Skapar objekt av klassen Gamehelper
         String heroName = gameHelper.readInput(); // Skapar metod av scannern

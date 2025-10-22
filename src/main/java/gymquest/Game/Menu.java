@@ -22,7 +22,7 @@ public class Menu {
         System.out.println("[2] Hero Info");
         System.out.println("[3] Exit");
     }
-    public void start() {
+    public void start() throws InterruptedException {
         System.out.println("=== Welcome to GymQuest ===");
         while (gameIsRunning) { // While loop som kör alternativen tills användaren väljer exit
             showMenu();

@@ -14,9 +14,9 @@ public class EgoLift extends Monster {
     @Override // Gjorde en override på monsterklassens abstrakta metod för att ge slumpmässig chans till randomXp
     public void randomXp() {
         double chance = Math.random();
-        if (chance < 0.5) { // 40% chans till randomXp
+        if (chance < 0.3) { // 40% chans till randomXp
             System.out.println("⚡⚡⚡ WOW! You got a pre-workout from your gym-bro! You have so much energy! (+40 Motivation) ⚡⚡⚡");
-            setXpReward(getXpReward() + 40);
+            setXpReward(getXpReward() + 30);
         }
     }
 }

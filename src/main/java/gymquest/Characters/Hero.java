@@ -56,10 +56,6 @@ public class Hero extends Character {
         System.out.println("Max focus: " + maxHp);
     }
 
-    public void equip(Weapon weapon) { // FÖRKLARA
-        this.weapon = weapon;
-    }
-
     public Weapon getWeapon() {
         return weapon;
     }

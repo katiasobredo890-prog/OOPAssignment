@@ -10,12 +10,15 @@ public class Weapon {
     }
     public String getName() {
         return name;
+
     }
     public int getDamage() {
         return damage;
+
     }
     @Override // Behöver inte anropa med lång kod utan med metoden
     public String toString() { // Gör override på javas automatiska klass object för att ej få ful utskrift eftersom jag skriver ut ett helt objekt (Weapon)
         return name + " (+" + damage + "dmg)";
+
     }
 }
